@@ -15,24 +15,17 @@
  
  */
 
-$navbar-default-bg: #312312;
-$light-orange: #ff8c00;
-$navbar-default-color: $light-orange;
+$navbar-default-bg: #001f3f;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 #logo {
 	margin-top: 10px;
-	margin-bottom: 10px;
 	float: left;
-	margin-right: 10px;
-	font-size: 2em;
-	color: #fff;
-	text-transform: uppercase;
+	margin-right: 0px;
 	letter-spacing: -1px;
 	padding-top: 9px;
-	font-weight: bold;
 }
 
 #logo:hover {
@@ -41,17 +34,22 @@ $navbar-default-color: $light-orange;
 }
 
 body {
-	padding-top: 80px;
+	
 }
 
 .nav_item {
 	margin-left: 25px;
-	float: left;
+	float: right;
 	margin-top: 20px;
+	color: #001f3f;
 }
 
 .center {
 	text-align: center;
+	margin-right: 10px;
+	margin-left: 14px;
+	height: 540px;
+	width: 1540px;
 }
 
 h1, h2, h3, h4 {
@@ -79,14 +77,16 @@ h2{
 }
 
 .midrow {
-	text-align: center;
+	margin-top: 80px;
+	text-align: left;
 	letter-spacing: 1;
 }
 
 .btn-primary {
-	margin-left: 110px;
 	padding-top: 10px;
 	font-weight: bold;
+	background-color: #001f3f;
+	border-color: #001f3f;
 }
 
 .footer {
@@ -94,5 +94,46 @@ h2{
 	border-top: 1px solid #eaeaea;
 }
 
+#gallery-links {
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 300px;
+	width: 90%;
+	overflow: auto;
 
+}
+
+#gallery-links img {
+	max-height: 100%;
+	max-width: auto;
+	margin: auto;
+
+}
+
+#gallery-head {
+	margin-top: 90px;
+	text-align: left;
+	font-weight: bold;
+	background-color: #001f3f;
+	padding: 10px 10px 10px 10px;
+	margin-right: 20px;
+	margin-left: 20px;
+	font-family: Impact, Charcoal, sans-serif;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+	word-spacing: 10px;
+	border-color: #DDDDDD;
+}
+
+#gallery-head text {
+	opacity: 0.4;
+}
+
+#head-vid {
+	padding-bottom: 50px;
+	width: 100%;
+	height: auto;
+	loop: true;
+}
 
