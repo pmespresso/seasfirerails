@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/home', to: 'pages#home'
 
+  resources :logs
   root "pages#home"
 end
