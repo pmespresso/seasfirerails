@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502010537) do
+ActiveRecord::Schema.define(version: 20150502013353) do
 
   create_table "logs", force: :cascade do |t|
     t.string  "title"
-    t.text    "entry"
     t.text    "place"
     t.text    "date"
+    t.text    "entry"
     t.integer "rating"
   end
 

@@ -1,1 +1,5 @@
-<h1> Hello </h1>
+<% @log.each do |log| %>
+  <div class="post_wrapper">
+    <h2 class="title"><%= link_to log.title, log %></h2>
+  </div>
+<% end %>
