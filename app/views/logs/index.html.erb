@@ -2,4 +2,32 @@
   <div class="post_wrapper">
     <h2 class="title"><%= link_to log.title, log %></h2>
   </div>
+
+  <div id="sidebar">
+  	<div id="logo">
+  		<%= link_to root_path do %>
+  			<%= image_tag("seasfire.png") %>
+  		<% end %>
+  	</div>
+
+  	<ul id="categories">
+  		<li><%= link_to "Home", root_path, class: "fa fa-home fa-fw" %></li><br/>
+      <li><a href="localhost:3000" /> <img src="assets/seasfire.png" /></a>
+  		<% if user_signed_in? %>
+	  		<li><%= link_to "Diver Profile", "", class: "fa-fw" %></li>
+	  		<li><%= link_to "Log a Dive", new_log_path, class: "fa fa-camera-retro fa-1x"%></li>
+	  		<li class="fa-fw"><%= link_to "Gallery", "" %></li>
+
+
+	  	<% else %>
+
+	  		<li><i class="fa fa-facebook" id="facebook"><%= link_to "Diver Profile", "", class: "btn btn-social-icon btn-facebook" %></i></li><br/>
+
+	  		<li><%= link_to "View Dive Logs", new_log_path, class: ""%></li><br/>
+
+	  		<li><%= link_to "Explore Gallery", "", class: "fa fa-camera-retro fa-2x fa-fw"%></li><br/>
+	  	<% end %>
+
+	  </ul>
+   </div>
 <% end %>
