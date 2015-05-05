@@ -1,13 +1,24 @@
-<h1> <%= @log.title %> </h1>
+<div class="container-fluid">
+	<div class="row" id="titleplace">
+		<h1 id="title"> <%= @log.title %> </h1>
+		<h3 id="place"> @ <%= @log.place %> </h3>
+		<h3 id="date"> <%= @log.date %> </h3>
+		<h3 id="rating"> <%= @log.rating %> </h3>
+	</div>
+</div>
 
-<section>
-	<h2> <%= @log.place %> </h2>
-	<h3> <%= @log.date %> </h3>
-	<h3> <%= @log.rating %> </h3>
+<section id="entry">
+	<p>
+		<%= @log.entry %>
+	</p>
 <section>
 
-<p class="entry">
-	<%= @log.entry %>
-</p>
+<div class="container-fluid" id="foot">
+	<div class="row">
+		<div class="btn btn-primary"><%= link_to "Back Home", root_path %></div>
+		<div class="btn btn-primary"><%= link_to "Browse Logs", log_path %></div>
+	</div>
+</div>
+
 
 
