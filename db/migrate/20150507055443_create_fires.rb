@@ -1,4 +1,4 @@
-class CreateFire < ActiveRecord::Migration
+class CreateFires < ActiveRecord::Migration
   def change
     create_table :fires do |t|
     	t.string :name
