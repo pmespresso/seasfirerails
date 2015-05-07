@@ -15,8 +15,6 @@
  
  */
 
-$navbar-default-bg: #001f3f;
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -41,11 +39,13 @@ body {
 	
 }
 
-.nav_item {
+#head-nav {
 	margin-left: 25px;
-	float: right;
-	margin-top: 20px;
 	color: #001f3f;
+}
+
+.navbar-form {
+	margin-top: 35px;
 }
 
 .center {
@@ -117,13 +117,12 @@ h2{
 
 #gallery-head {
 
-	text-align: left;
+	text-align: center;
 	font-weight: bold;
 	background-size: cover;
 	background-color: #001f3f;
 	padding: 10px 10px 10px 10px;
-	margin-right: 20px;
-	margin-left: 20px;
+	margin-right: 60px;
 	font-family: Impact, Charcoal, sans-serif;
 	color: #FFFFFF;
 	letter-spacing: 2px;
@@ -178,94 +177,6 @@ h2{
 			width: 100%;
 		}
 	}
-}
-
-/*!
-Styles for full screen background video demo
-*/
-/* =============================================================================
-  RESETS
-============================================================================= */
-html,
-body,
-div,
-h1,
-p,
-a,
-video {
-  margin: 0;
-  padding: 0;
-}
-
-/* =============================================================================
-  HTML, BODY
-============================================================================= */
-html,
-body {
-  height: 100%;
-}
-
-body {
-  font-size: 16px;
-  font-family: "Oxygen", sans-serif;
-  line-height: 1.5;
-}
-
-/* =============================================================================
-  CONTENT
-============================================================================= */
-.content {
-  position: relative;
-  top: 30%;
-  z-index: 2;
-  margin: 0 auto;
-  max-width: 720px;
-  text-align: center;
-}
-
-.content__heading {
-  margin-bottom: 24px;
-  color: #272727;
-  font-size: 44px;
-  img {
-  	position: relative;
-  	width: 400px;
-  	height: 400px;
-  	bottom: 85px;
-  }
-}
-
-.content__teaser {
-  padding-top: 10px;
-  margin-bottom: 24px;
-  color: #595959;
-  font-size: 22px;
-}
-
-.content__cta {
-  display: inline-block;
-  padding: 12px 48px;
-  color: #ff3c64;
-  font-size: 22px;
-  text-decoration: none;
-  border: solid 4px #ff3c64;
-}
-
-/* =============================================================================
-  VIDEO
-============================================================================= */
-.video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 #site-entrance {
@@ -325,4 +236,38 @@ body {
 	btn {
 		color: #DDDDDD;
 	}
+}
+
+#blurbs {
+	margin-right: 50px;
+	display: block;
+	float: right;
+}
+
+#gallery {
+	display: block;
+	margin-right: 40px;
+	float: right;
+	margin-top: 40px;
+}
+
+#about-header {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #001f3f;
+	color: #DDDDDD;
+	opacity: 0.4;
+	margin-left: 20px;
+}
+
+#bs-example navbar collapse-1 {
+	margin-top: 80px;
+	position: absolute;
+}
+
+#head-img{
+	display: inline;
+	text-align: center;
+	margin-left: 40px;
+	margin-top: 20px;
 }
