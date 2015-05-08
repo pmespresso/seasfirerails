@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507060301) do
+ActiveRecord::Schema.define(version: 20150508070333) do
 
   create_table "divers", force: :cascade do |t|
     t.string   "divername"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150507060301) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "diver_id"
   end
 
   create_table "logs", force: :cascade do |t|

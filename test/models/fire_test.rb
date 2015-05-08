@@ -3,12 +3,18 @@ require 'test_helper'
 class FireTest < ActiveSupport::TestCase
 
 	def setup
-		@fire = Fire.new(name: "Sick Moray Eel", summary: "pretty sick dive, chill not too bad currents, good visibility",
-			    description: "Cool weather, easy dive, nothing went wrong except I was low on oxygen pretty fast.")
+		@diver = Diver.create(divername: "emiko", email: "emiko@email.com")
+		@fire = @diver.fires.build(name: "Sick Moray Eel", summary: "pretty sick dive, chill not too bad currents, good visibility", description: "Cool weather, easy dive, nothing went wrong except I was low on oxygen pretty fast.")
+
 	end
 
 	test "fire should be valid" do
 		assert @fire.valid?
+	end
+
+	test "diver_id should be present" do
+		@fire.diver_id = nil
+		assert_not @fire.valid?
 	end
 
 	test "name should be present" do
@@ -55,8 +61,4 @@ class FireTest < ActiveSupport::TestCase
 		@fire.description = "a" * 19
 		assert_not @fire.valid?
 	end
-
-	test "diver id should be present" do
-	end
-
 end
