@@ -17,6 +17,11 @@ class FireTest < ActiveSupport::TestCase
 		assert_not @fire.valid?
 	end
 
+	test "fire id should be present" do
+		@fire.id = nil
+		assert_not @fire.valid?
+	end
+
 	test "name should be present" do
 		@fire.name = " "
 		assert_not @fire.valid?

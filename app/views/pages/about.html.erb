@@ -1,25 +1,25 @@
-<div class="header" id="about-header">
-	<h1> About </h1>
+<div class="container" id="head-image">
+	<div class="img-responsive">
+		<%= image_tag('headbanner/selfie.jpg') %>
+	</div>
 </div>
 
-<div id="sidebar">
-	<div id="logo">
-		<%= link_to root_path do %>
-			<%= image_tag("seasfire.png") %>
-		<% end %>
+<div class="container">
+	<div id="sidebar">
+		<div id="logo">
+			<%= link_to root_path do %>
+				<%= image_tag("seasfire.png") %>
+			<% end %>
+		</div>
+
+		<ul id="categories">
+	  			<li><%= link_to "Log a Dive", new_fire_path %></li>
+	    		<li><%= link_to "Sign Out", '', :method => :delete %></li>
+	  	<!-- Need to Add Devise First, then add conditionals -->
+	    		<li><%= link_to "Sign In", '' %> </li>
+	    		<li><%= link_to "Sign Up", '' %></li>
+	  	</ul>
 	</div>
-
-	<ul id="categories">
-		<% if user_signed_in? %>
-  		<li><%= link_to "Log a Dive", new_log_path %></li>
-    	<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-  <% else %>
-
-    <li><%= link_to "Sign In", new_user_session_path %> </li>
-    <li><%= link_to "Sign Up", new_user_registration_path %></li>
-  <% end %>
-
-  </ul>
 </div>
 
 <div class="row" id="blurbs">
@@ -44,7 +44,7 @@
 			and we care about shit that actually matters, not just money because we aren't assholes. This
 			should link to a biography page. 
 			</h2>
-			<p><%= link_to "Watch Us in Action", new_log_path, class: "btn btn-primary btn-small" %> </p>
+			<p><%= link_to "Watch Us in Action", new_fire_path, class: "btn btn-primary btn-small" %> </p>
 		</div>
 
 		<div class="col-lg-4">

@@ -44,18 +44,6 @@ body {
 	color: #001f3f;
 }
 
-.navbar-form {
-	margin-top: 35px;
-}
-
-.center {
-	text-align: center;
-	margin-right: 10px;
-	margin-left: 14px;
-	height: 540px;
-	width: 1540px;
-}
-
 h1, h2, h3, h4 {
 	line-height: 1;
 }
@@ -179,6 +167,13 @@ h2{
 	}
 }
 
+#home-image {
+	position: fixed;
+	display: inline;
+	overflow: hidden;
+	padding: 0 15px;
+}
+
 #site-entrance {
   position: absolute;
   top: 40px;
@@ -261,13 +256,13 @@ h2{
 }
 
 #bs-example navbar collapse-1 {
-	margin-top: 80px;
 	position: absolute;
 }
 
-#head-img{
-	display: inline;
-	text-align: center;
-	margin-left: 40px;
-	margin-top: 20px;
+.navbar-brand {
+	display: block;
+	float: left;
+	position: relative;
+	margin-bottom: 30px;
 }
+

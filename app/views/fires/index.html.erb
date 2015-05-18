@@ -1,0 +1,23 @@
+<h1> All Fires </h1>
+
+<hr/>
+
+<% @fires.each do |fire| %>
+	<div class="row">
+	
+		<div class="col-md-2">
+			<section class="diver_info center">
+				<%= gravatar_for fire.diver, size: 100 %>
+				<h5>Diver Name: <%= fire.diver.divername %></h5>
+			</section>
+		</div>
+
+		<div class="col-lg-8 well">
+			<h4> <%= link_to fire.name, %> </h4>
+			<p> <%= fire.summary %></p>
+			<p> 
+				<span class='quiet'><small><%= time_ago_in_words(fire.created_at) %> ago </small> </span>
+			</p>
+		</div>
+	</div>
+<% end %>

@@ -1,25 +1,14 @@
 class FiresController < ApplicationController
 
 	def index 
-		@fire = Fire.all
-	end
-
-	def new
-	end
-
-	def create
-		@fire = Fire.new(post_params)
-		@fire.save
-			redirect_to @fire
+		@fires = Fire.all.order("created_at DESC")
 	end
 
 	def show
 		@fire = Fire.find(params[:id])
 	end
 
-	private
-
-	def post_params
-		params.require(:fire).permit(:title, :entry, :place, :date, :rating)
+	def new
+		@fire = Fire.new
 	end
 end
