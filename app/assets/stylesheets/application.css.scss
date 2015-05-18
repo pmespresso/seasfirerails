@@ -31,19 +31,6 @@
 	text-decoration: none;
 }
 
-body {
-}
-
-#row-one {
-	position: absolute;
-	
-}
-
-#head-nav {
-	margin-left: 25px;
-	color: #001f3f;
-}
-
 h1, h2, h3, h4 {
 	line-height: 1;
 }
@@ -52,7 +39,6 @@ h1{
 	font-size: 3em;
 	letter-spacing: -2px;
 	margin-bottom: 30px;
-	text-align: center;
 }
 
 h2{
@@ -167,58 +153,11 @@ h2{
 	}
 }
 
-#home-image {
-	position: fixed;
-	display: inline;
-	overflow: hidden;
-	padding: 0 15px;
-}
-
 #site-entrance {
   position: absolute;
   top: 40px;
   left: 30px;
   transition: .5x ease;
-}
-
-#titleplace {
-	background-color: #001f3f;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-left: 30px;
-}
-
-#title {
-	font-size: 39px;
-	color: #DDDDDD;
-	text-align: left;
-	float: left;
-	margin-right: 10px;
-}
-
-#place {
-	color: #DDDDDD;
-	font-size: 22px;
-	text-align: left;
-	float: left;
-	letter-spacing: -1px;
-}
-
-#date {
-	text-align: right;
-	float: right;
-	color: #DDDDDD;
-	letter-spacing: 2px;
-	margin-left: 10px;
-	margin-right: 10px;
-	padding-right: 30px;
-}
-
-#rating {
-	text-align:right;
-	float: right;
-	color: #DDDDDD;
-	letter-spacing: 2px;
 }
 
 #entry {
@@ -263,6 +202,35 @@ h2{
 	display: block;
 	float: left;
 	position: relative;
-	margin-bottom: 30px;
 }
 
+#head-nav {
+	color: #001f3f;
+	z-index: 2;
+	position: relative;
+}
+
+.background {
+	display: block;
+	position: relative;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+
+.happy {
+	display: block;
+	position: relative;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	padding-top: 2em;
+}
+
+.mission {
+	display: inline;
+}
