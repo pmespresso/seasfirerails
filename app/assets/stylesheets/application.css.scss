@@ -36,17 +36,6 @@ h2{
 	color: #777;
 }
 
-.left {
-	text-align: left;
-	letter-spacing: .5;
-}
-
-.midrow {
-	margin-top: 80px;
-	text-align: left;
-	letter-spacing: 1;
-}
-
 .btn-primary {
 	padding-top: 10px;
 	font-weight: bold;
@@ -58,44 +47,6 @@ h2{
 	margin-top: 25px;
 	border-top: 1px solid #eaeaea;
 }
-
-#gallery-links {
-	margin-top: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
-	height: 300px;
-	width: 90%;
-	overflow: auto;
-
-}
-
-#gallery-links img {
-	max-height: 100%;
-	max-width: auto;
-	margin: auto;
-
-}
-
-#gallery-head {
-
-	text-align: center;
-	font-weight: bold;
-	background-size: cover;
-	background-color: #001f3f;
-	padding: 10px 10px 10px 10px;
-	margin-right: 60px;
-	font-family: Impact, Charcoal, sans-serif;
-	color: #FFFFFF;
-	letter-spacing: 2px;
-	word-spacing: 10px;
-	border-color: #DDDDDD;
-	z-index: 1;
-}
-
-#gallery-head text {
-	opacity: 0.4;
-}
-
 
 #sidebar {
 	width: 270px;
@@ -159,26 +110,35 @@ h2{
 	}
 }
 
-#blurbs {
-	margin-right: 50px;
-	display: block;
-	float: right;
-}
-
 #gallery {
 	display: block;
-	margin-right: 40px;
-	float: right;
-	margin-top: 40px;
+	position: relative;
 }
 
-#about-header {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background-color: #001f3f;
-	color: #DDDDDD;
-	opacity: 0.4;
-	margin-left: 20px;
+#gallery-links {
+	height: 300px;
+	width: 100%;
+	overflow: auto;
+	border-radius: 15px;
+	border-color: #FFFFFF;
+
+}
+
+#gallery-links img {
+	max-height: 100%;
+	max-width: 50%;
+	margin: auto;
+
+}
+
+#gallery-head {
+	padding-top: 25px;
+	text-align: center;
+	font-weight: 300;
+	color: #DC143C;
+	letter-spacing: 2px;
+	word-spacing: 18px;
+	z-index: 1;
 }
 
 #bs-example navbar collapse-1 {
@@ -195,6 +155,7 @@ a {
 	margin-left: 28px;
 	padding: 0px 0px 10px 0px;
 }
+
 .background {
 	display: block;
 	position: relative;

@@ -20,6 +20,7 @@ class FiresController < ApplicationController
 			flash[:success] = "Your Fire was created successfully"
 			redirect_to fires_path
 		else
+			flash[:success] = "Your Fire failed to successfully post"
 			render :new
 		end
 	end

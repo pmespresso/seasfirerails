@@ -1,83 +1,66 @@
-<div class="container-fluid" id="head-image" style=''>
-	<div class="img-responsive">
-		<%= image_tag('headbanner/selfie.jpg') %>
-	</div>
-</div>
-
-<div class="container">
-	<div id="sidebar">
-		<div id="logo">
-			<%= link_to root_path do %>
-				<%= image_tag("seasfire.png") %>
-			<% end %>
-		</div>
-
-		<ul id="categories">
-	  			<li><%= link_to "Log a Dive", new_fire_path %></li>
-	    		<li><%= link_to "Sign Out", '', :method => :delete %></li>
-	  	<!-- Need to Add Devise First, then add conditionals -->
-	    		<li><%= link_to "Sign In", '' %> </li>
-	    		<li><%= link_to "Sign Up", '' %></li>
-	  	</ul>
-	</div>
-</div>
-
-<div class="row" id="blurbs">
-	<div class="container">
-		<div class="col-lg-4">
-			<h3 class="midrow">
-			What We Do
-			</h3>
-			<h2 class="left">
-			This is what we do and what we aim to do. Our mission and vision and suit like that. 
-			</h2>
-			<p><%= link_to "Watch Us in Action", "", class: "btn btn-primary btn-small" %> </p>
-		</div>
-
-		<div class="col-lg-4">
-			<h3 class="midrow">
-			Who We Are
-			</h3>
-
-			<h2 class="left">
-			This is where we say hello this is Ogle, Andrew, Sharon and we are divers and scientists
-			and we care about shit that actually matters, not just money because we aren't assholes. This
-			should link to a biography page. 
-			</h2>
-			<p><%= link_to "Watch Us in Action", new_fire_path, class: "btn btn-primary btn-small" %> </p>
-		</div>
-
-		<div class="col-lg-4">
-			<h3 class="midrow">
-			Our Expeditions
-			</h3>
-
-			<h2 class="left">
-			Check out our expeditions! this should link to an album view of each expedition and people
-			should be able to checkout each member's journal entries from here. 
-			</h2>
-			<p><%= link_to "Watch Us in Action", "", class: "btn btn-primary btn-small" %> </p>		
-
+<!DOCTYPE html>
+<html>
+<body>
+<div class='row'>
+	<div class="container-fluid" id="head-image">
+		<div class="image">
+			<%= image_tag('headbanner/selfie.jpg', height: '600') %>
 		</div>
 	</div>
 </div>
 
-<div class="row" id="gallery">
-	<div class="container">
-	<h1 id="gallery-head"> Ready. Set. SCUBA. </h1>
-	<button type='button' class='btn btn-default' id="gallery-links">
-			
-		    <%= image_tag("headbanner/create.jpg", alt: "create") %>
-			<%= image_tag("headbanner/Explore.jpg", alt: "explore") %>
-			<%= image_tag("headbanner/research.jpg", alt: "research") %>
-			<%= image_tag("headbanner/selfie.jpg", alt: "selfie") %>
-			<%= image_tag("headbanner/mike.jpg", alt: "mike") %>
-			<%= image_tag("headbanner/fred.jpg", alt: "fred") %>
-			<%= image_tag("headbanner/yoohoo.jpg", alt: "yoohoo") %>
-			<%= image_tag("headbanner/youngs.jpg", alt: "youngs") %>
-			<%= image_tag("headbanner/moray.jpg", alt: "moray") %>
-			<%= image_tag("headbanner/ogle_spock.jpg", alt: "ogle_spock") %>
-			<%= image_tag("headbanner/redflower.jpg", alt: "redflower") %>
-	</button>
+<div class='container' style: 'width: 100%'>
+	<div id="the-team" class="col-sm-12" style='text-align: center'>
+		<div class="col-xs-12 col-md-4">
+			<div id="founders" class="col-sm-6 col-md-12">
+				<h1 class='name'> Ogle </h1>
+				<img> <%= image_tag('ogle.jpg', class: 'img-circle', height: '240', width:'190') %> </img>
+			</div>
+			<div id="explanation" class="col-sm-6 col-md-12">
+				<p>Ogle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula a </p>                          
+			</div>
+		</div>
+
+
+	<div class="col-xs-12 col-md-4">
+		<div id="founders" class="col-sm-6 col-md-12">
+			<h1 class='name'> Andrew </h1>
+			<img> <%= image_tag('andrew.jpg', class: 'img-circle', height: '240', width: '190') %> </img>
+		</div>
+		<div id="explanation" class="col-sm-6 col-md-12">
+			<p>Andrew Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula a </p>                          
+		</div>
+	</div>
+
+	<div class="col-xs-12 col-md-4">
+		<div id="founders" class="col-sm-6 col-md-12">
+			<h1 class='name'> Sharon </h1>
+			<img> <%= image_tag('sharon.jpg', class: 'img-circle', height: '240', width:'190') %> </img>
+		</div>
+		<div id="explanation" class="col-sm-6 col-md-12">
+			<p>Sharon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula a </p>                          
+		</div>
 	</div>
 </div>
+
+
+<div class="row">
+	<div class="col-md-offset-1 col-md-10 col-md-offset-1" id="gallery" style='overflow:hidden'>
+		<h1 id="gallery-head"> Ready. Set. SCUBA. </h1>
+		<button type='button' class='btn btn-default' id="gallery-links">
+				
+			    <%= image_tag("headbanner/selfie.jpg", alt: "selfie") %>
+				<%= image_tag("headbanner/mike.jpg", alt: "mike") %>
+				<%= image_tag("headbanner/fred.jpg", alt: "fred") %>
+				<%= image_tag("headbanner/yoohoo.jpg", alt: "yoohoo") %>
+				<%= image_tag("headbanner/youngs.jpg", alt: "youngs") %><%= image_tag("headbanner/create.jpg", alt: "create") %>
+				<%= image_tag("headbanner/Explore.jpg", alt: "explore") %>
+				<%= image_tag("headbanner/research.jpg", alt: "research") %>
+				<%= image_tag("headbanner/moray.jpg", alt: "moray") %>
+				<%= image_tag("headbanner/ogle_spock.jpg", alt: "ogle_spock") %>
+				<%= image_tag("headbanner/redflower.jpg", alt: "redflower") %>
+		</button>
+		</div>
+</div>
+</body>
+</html>
