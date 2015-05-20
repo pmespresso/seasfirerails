@@ -1,4 +1,4 @@
-<h1> All Fires </h1>
+<h1 style='text-align: center'> All Fires </h1>
 
 <hr/>
 
@@ -13,10 +13,10 @@
 		</div>
 
 		<div class="col-lg-8 well">
-			<h4> <%= link_to fire.name, %> </h4>
-			<p> <%= fire.summary %></p>
-			<p> 
-				<span class='quiet'><small><%= time_ago_in_words(fire.created_at) %> ago </small> </span>
+			<h4> <%= link_to fire.name, fire_path(fire)%> </h4>
+			<p> <%= fire.summary %> </p>
+			<p>
+				<span class='quiet'><small><%= time_ago_in_words(fire.created_at) %></small></span>
 			</p>
 		</div>
 	</div>

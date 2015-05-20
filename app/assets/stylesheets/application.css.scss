@@ -224,13 +224,15 @@ h2{
 	display: block;
 	position: relative;
 	min-width: 100%;
-	min-height: 100%;
 	width: auto;
-	height: auto;
+	height: 529px;
 	overflow: hidden;
 	padding-top: 2em;
+	z-index: 0;
 }
 
-.mission {
+#subscribe {
 	display: inline;
+	position: fixed; 
+	z-index: 2;
 }

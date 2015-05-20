@@ -1,24 +1,20 @@
-<h1> Create New Fire </h1>
+<h1 style='text-align: center'> Create New Fire </h1>
+<hr/>
 
-<%= form_for :fires do |f| %>
+<div class='row'>
+	<div class='well col-md-8 col-md-offset-2'>
+		<%= form_for @fire do |f| %>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
 
-<div class="field">
-	<%= f.label :name %><br>
-	<%= f.text_area :name %>
+			<%= f.label :summary %>
+			<%= f.text_field :summary %>
+
+			<%= f.label :description %>
+			<%= f.text_area :description, rows: 10%>
+			
+			<%= f.submit 'Create Fire', class: 'btn btn-success' %>
+
+		<% end %>
+	</div>
 </div>
-
-<div class="field">
-	<%= f.label :summary %><br>
-	<%= f.text_area :summary %>
-</div>
-
-<div class="field">
-	<%= f.label :description %><br>
-	<%= f.text_area :description %>
-</div>
-
-<div class="actions">
-<%= f.submit %>
-</div>
-
-<%end%>
