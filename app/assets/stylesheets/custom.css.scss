@@ -14,11 +14,12 @@ input {
 	height: auto !important;
 }
 
-#new-fire-title {
+#fire-title {
 	font-size: 50px;
 	font-weight: 300;
 	letter-spacing: -1px;
 	line-height: 30.33px;
+	text-align: center;
 }
 
 #new-fire-how-to {
@@ -28,8 +29,8 @@ input {
 }
 
 #explanation {
-	font-size: 16px;
-	line-height: 30.33px;
+	font-size: 26px;
+	line-height: 43.33px;
 	letter-spacing: -0.2px;
 	font-weight: 300;
 }
@@ -58,8 +59,7 @@ input {
 
 .name {
 	font-weight: 300;
-	letter-spacing: 1px;
-	font-size: 55px;
-	padding: 20px 10px 10px 0;
-
+	letter-spacing: 1.2px;
+	font-size: 28px;
+	color: #27408B;
 }

@@ -25,6 +25,19 @@ class FiresController < ApplicationController
 		end
 	end
 
+	def edit
+		@fire = Fire.find(params[:id])
+	end
+
+	def update
+		@fire = Fire.find(params[:id])
+		if @fire.update(fire_params)
+			flash[:success] = "Successfully updated your Fire!"
+			redirect_to fire_path(@fire)
+		else
+			render :edit
+		end
+	end
 
 
 	private
