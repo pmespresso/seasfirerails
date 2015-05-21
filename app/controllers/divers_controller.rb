@@ -18,7 +18,6 @@ class DiversController < ActiveRecord::Base
 		@diver = Diver.find(post_params[:id])
 	end
 
-	
 	private
 
 	def post_params

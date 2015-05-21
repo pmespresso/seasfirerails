@@ -2,13 +2,7 @@
 <html>
 <body>
 <div class='row'>
-	<div class='container' style='display: inline-block; height: 100%; vertical-align: middle'>
-		<div class="col-md-6 col-md-offset-2" id="head-image">
-			<div class="image">
-				<%= image_tag('headbanner/selfie.jpg', height: '600', width: '1200') %>
-			</div>
-		</div>
-	</div>
+	<%= image_tag('headbanner/selfie.jpg', height: '600', width: '1200', class: 'col-md-10 col-md-offset-1') %>
 </div>
 
 <div class='row'>
@@ -57,8 +51,6 @@
 <div class="row">
 <h1 id="gallery-head"> Ready. Set. SCUBA. </h1>
 
-	<div class="col-md-offset-1 col-md-10 col-md-offset-1" id="gallery" style='overflow:hidden'>
-		
 		<button type='button' class='btn btn-default' id="gallery-links">
 				<%= image_tag("headbanner/mike.jpg", alt: "mike") %>
 				<%= image_tag("headbanner/fred.jpg", alt: "fred") %>
@@ -70,7 +62,6 @@
 				<%= image_tag("headbanner/ogle_spock.jpg", alt: "ogle_spock") %>
 				<%= image_tag("headbanner/redflower.jpg", alt: "redflower") %>
 		</button>
-		</div>
 </div>
 </body>
 </html>
