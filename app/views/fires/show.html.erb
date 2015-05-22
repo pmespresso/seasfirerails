@@ -11,6 +11,9 @@
 	<div class='col-md-8'>
 		<%= link_to "Edit this Fire", edit_fire_path(@fire), class: 'btn btn-warning' %>
 		<h3><%= @fire.summary %> </h3>
+		<div class="show_fire">
+			<%= image_tag(@fire.picture.url, class: "gravatar") if @fire.picture %>
+		</div>
 		<div class='well'>
 		<p>
 			<strong> So this is what happened: </strong>

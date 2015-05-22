@@ -43,6 +43,6 @@ class FiresController < ApplicationController
 	private
 
 		def fire_params
-			params.require(:fire).permit(:name, :summary, :description)
+			params.require(:fire).permit(:name, :summary, :description, :picture)
 		end
 end
