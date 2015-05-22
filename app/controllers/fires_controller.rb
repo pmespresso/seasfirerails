@@ -1,7 +1,7 @@
 class FiresController < ApplicationController
 
 	def index 
-		@fires = Fire.all
+		@fires = Fire.paginate(page: params[:page], per_page: 5)
 	end
 
 	def show
@@ -39,6 +39,17 @@ class FiresController < ApplicationController
 		end
 	end
 
+	def like
+		@fire = Fire.find(params[:id])
+		like = Like.create(like: params[:like], diver: Diver.first, fire: @fire)
+		if like.valid?
+			flash[:success] = "Liked!"
+			redirect_to :back
+		else
+			flash[:danger] = "You already voted on this Fire!"
+			redirect_to :back
+		end
+	end
 
 	private
 

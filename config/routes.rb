@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   # delete '/fires/:id', to: 'fires#destroy'
 
   resources :divers 
-  resources :fires
+  resources :fires do
+    member do
+      post 'like'
+    end
+  end
+
 end

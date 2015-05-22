@@ -1,5 +1,7 @@
 <%= render 'shared/page_title', title: 'All Fires' %>
 
+<%= will_paginate %>
+
 <% @fires.each do |fire| %>
 	<div class="row">
 	
@@ -13,8 +15,19 @@
 		<div class="col-lg-6 well">
 			<h4> <%= link_to fire.name, fire_path(fire), class: "post-title" %> </h4>
 			<h5> <%= fire.summary %> </h5>
+
+			<div class='pull-right'>
+			<%= link_to like_fire_path(fire, like: true), method: :post do %>
+				<i class='glyphicon glyphicon-thumbs-up'></i>
+			<% end %> &nbsp;<%= fire.thumbs_up_total %>&nbsp;&nbsp; 
+			
+			<%= link_to like_fire_path(fire, like: false), method: :post do %>
+				<i class='glyphicon glyphicon-thumbs-down'></i>
+			<% end %> &nbsp; <%= fire.thumbs_down_total %>
+		</div>
 			<p>
-				<span class='quiet'><small><%= time_ago_in_words(fire.created_at) %></small></span>
+				<span class='quiet pull-left'><small>created <%= time_ago_in_words(fire.created_at) %> ago </small></span> 
+				<span class='quiet pull-right'><small> updated <%= time_ago_in_words(fire.updated_at) %> ago </small></span>
 			</p>
 		</div>
 
@@ -23,3 +36,5 @@
 		</div>
 	</div>
 <% end %>
+
+<%= will_paginate %>

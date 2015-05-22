@@ -9,10 +9,11 @@
 	</div>
 	
 	<div class='col-md-8'>
-		<%= link_to "Edit this Fire", edit_fire_path(@fire), class: 'btn btn-warning' %>
+		
 		<h3><%= @fire.summary %> </h3>
 		<div class="show_fire">
 			<%= image_tag(@fire.picture.url, class: "gravatar") if @fire.picture %>
+			<%= link_to "Edit this Fire", edit_fire_path(@fire), class: 'btn btn-warning' %>
 		</div>
 		<div class='well'>
 		<p>
@@ -20,6 +21,15 @@
 		</p>
 
 		<%= simple_format(@fire.description) %>
+		<div class='pull-right'>
+			<%= link_to like_fire_path(@fire, like: true), method: :post do %>
+				<i class='glyphicon glyphicon-thumbs-up'></i>
+			<% end %> &nbsp;<%= @fire.thumbs_up_total %>&nbsp;&nbsp; 
+			
+			<%= link_to like_fire_path(@fire, like: false), method: :post do %>
+				<i class='glyphicon glyphicon-thumbs-down'></i>
+			<% end %> &nbsp; <%= @fire.thumbs_down_total %>
+		</div>
 	</div>
 </div>
 </div>
