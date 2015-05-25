@@ -22,3 +22,21 @@ email: text
 - name must be between 3 and 40 characters
 - email must be present
 - email must have an '@' sign
+
+****
+
+Divers
+
+What we have: 
+- Diver model, diver validations
+- Diver table and columns divername and email
+
+What we need to do:
+- add passwords to the divers tables
+- Use email as log in credentials
+- Ability to register new divers to use the app
+- Ability to display divers profile
+- Ability to list divers using the app
+- Ability for divers to log in and out of the app
+- Restric actions like create recipe, edit recipe, and like feature to logged in Divers only. 
+- Restrict edit of recipes by only the diver who created the recipe

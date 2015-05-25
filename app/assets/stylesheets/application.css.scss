@@ -126,16 +126,6 @@ h2{
 
 }
 
-#gallery-head {
-	padding-top: 25px;
-	text-align: center;
-	font-weight: 300;
-	color: #DC143C;
-	letter-spacing: 2px;
-	word-spacing: 18px;
-	z-index: 1;
-}
-
 #bs-example navbar collapse-1 {
 	position: absolute;
 }
@@ -151,25 +141,10 @@ a {
 	padding: 0px 0px 10px 0px;
 }
 
-.background {
-	display: inline-block;
-	position: relative;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	overflow: hidden;
-}
-
-.happy {
+.img-responsive {
+	max-width: 100%;
 	display: block;
-	position: relative;
-	min-width: 100%;
-	width: auto;
-	height: 529px;
-	overflow: hidden;
-	padding-top: 2em;
-	z-index: 0;
+	margin: 0 auto;
 }
 
 #subscribe {

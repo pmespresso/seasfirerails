@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root "pages#home"
 
   get '/about' => 'pages#about'
-  get '/divers' => 'divers#index'
 
   # get '/fires' => 'fires#index'
   # post '/fires' => 'fires#create'
@@ -12,7 +11,10 @@ Rails.application.routes.draw do
   # get '/fires/:id', to: 'fires#show', as:'fire'
   # delete '/fires/:id', to: 'fires#destroy'
 
-  resources :divers 
+  resources :divers , except: [:new]
+
+  get '/register', to: 'divers#new'
+
   resources :fires do
     member do
       post 'like'

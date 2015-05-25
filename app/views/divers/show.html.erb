@@ -1,0 +1,53 @@
+<%= render 'shared/page_title', title: "Diver: " + @diver.divername %>
+
+<div class='row'>
+	<div class='col-md-4 col-md-offset-4'>
+		<%= image_tag @diver.image.url(:medium) %>
+	<hr/>
+	</div>
+</div>
+
+<div class='row'>
+	<div class='col-md-4 col-md-offset-4 pull-left'>
+			<%= will_paginate @fires %>
+	</div>
+</div>
+
+<% @diver.fires.each do |fire| %>
+<div class='row'>
+	<div class='col-lg-6 well col-lg-offset-3'>
+	<h3> <%= link_to fire.name, fire_path(fire), class: "post-title" %> </h3>
+		<h5 class="post-summary"> <%= fire.summary %> </h5>
+
+		<div class='like pull-left'>
+			<%= link_to like_fire_path(fire, like: true), method: :post do %>
+				<button type='button' class='btn btn-info btn-lg'>
+					<i class='glyphicon glyphicon-thumbs-up'></i>
+				</button>
+			<% end %> &nbsp;<%= fire.thumbs_up_total %>&nbsp;&nbsp; 
+			
+			<%= link_to like_fire_path(fire, like: false), method: :post do %>
+			<button type='button' class='btn btn-danger btn-lg'>
+				<i class='glyphicon glyphicon-thumbs-down'></i>
+			</button>
+			<% end %> &nbsp; <%= fire.thumbs_down_total %>
+		</div>
+
+		<p class='edition'>
+			<span class='quiet'><small>created <%= time_ago_in_words(fire.created_at) %> ago </small></span>  <br/>
+			<span class='quiet'><small> updated <%= time_ago_in_words(fire.updated_at) %> ago </small></span>
+		</p>
+
+		<div class='pull-right'>
+		<%= image_tag(fire.picture.url, class: "gravatar") if fire.picture? %>
+		</div>
+	</div>
+</div>
+<% end %>
+
+<div class='row'>
+	<div class='col-md-4 col-md-offset-4 center'>
+			<%= will_paginate @fires %>
+	</div>
+</div>
+

@@ -4,36 +4,45 @@
 
 <% @fires.each do |fire| %>
 	<div class="row">
-	
-		<div class="col-md-2">
-			<section class="diver_info center">
-				<%= gravatar_for fire.diver, size: 100 %>
-				<h5>Diver Name: <%= fire.diver.divername %></h5>
-			</section>
-		</div>
 
-		<div class="col-lg-6 well">
-			<h4> <%= link_to fire.name, fire_path(fire), class: "post-title" %> </h4>
-			<h5> <%= fire.summary %> </h5>
+		<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-10 col-lg-offset-1 well">
+
+			<div class="col-sm-6 col-md-2">
+				<section class="diver_info center">
+					<%= gravatar_for fire.diver, size: 100 %>
+					<h5>Diver Name: <%= fire.diver.divername %></h5>
+				</section>
+			</div>
+
+			<h3> <%= link_to fire.name, fire_path(fire), class: "post-title" %> </h3>
+
+			<h5 class="post-summary"> <%= fire.summary %> </h5>
+
+			<div class='like pull-left'>
+				<%= link_to like_fire_path(fire, like: true), method: :post do %>
+					<button type='button' class='btn btn-info btn-lg'>
+						<i class='glyphicon glyphicon-thumbs-up'></i>
+					</button>
+				<% end %> &nbsp;<%= fire.thumbs_up_total %>&nbsp;&nbsp; 
+				
+				<%= link_to like_fire_path(fire, like: false), method: :post do %>
+				<button type='button' class='btn btn-danger btn-lg'>
+					<i class='glyphicon glyphicon-thumbs-down'></i>
+				</button>
+				<% end %> &nbsp; <%= fire.thumbs_down_total %>
+			</div>
+
+			<p class='edition'>
+				<span class='quiet'><small>created <%= time_ago_in_words(fire.created_at) %> ago </small></span>  <br/>
+				<span class='quiet'><small> updated <%= time_ago_in_words(fire.updated_at) %> ago </small></span>
+			</p>
 
 			<div class='pull-right'>
-			<%= link_to like_fire_path(fire, like: true), method: :post do %>
-				<i class='glyphicon glyphicon-thumbs-up'></i>
-			<% end %> &nbsp;<%= fire.thumbs_up_total %>&nbsp;&nbsp; 
-			
-			<%= link_to like_fire_path(fire, like: false), method: :post do %>
-				<i class='glyphicon glyphicon-thumbs-down'></i>
-			<% end %> &nbsp; <%= fire.thumbs_down_total %>
-		</div>
-			<p>
-				<span class='quiet pull-left'><small>created <%= time_ago_in_words(fire.created_at) %> ago </small></span> 
-				<span class='quiet pull-right'><small> updated <%= time_ago_in_words(fire.updated_at) %> ago </small></span>
-			</p>
+			<%= image_tag(fire.picture.url, class: "gravatar") if fire.picture? %>
+			</div>
 		</div>
 
-		<div class='col-md-4'>
-			<%= image_tag(fire.picture.url, size: "250x150", class: "gravatar") if fire.picture? %>
-		</div>
+		
 	</div>
 <% end %>
 
