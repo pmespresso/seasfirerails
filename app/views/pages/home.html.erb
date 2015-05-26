@@ -5,7 +5,7 @@
 		<%= image_tag 'squad.png', :class => 'img-responsive', :size => '1650x650' %>
 	</div>
 
-	<div id="ced" class="col-sm-12" style='text-align: center'>
+	<div id="ced" class="col-sm-12" style='text-align: center; padding-top: 45px'>
 	    <div class="col-xs-12 col-md-4">
 	        <div id="create" class="col-sm-6 col-md-12">
 	            <h1> Create <span class='glyphicon glyphicon-scissors' style='margin-left: 15px'></span> </h1>                
@@ -35,8 +35,28 @@
 	    </div>
 	</div>
 
+	<div class="row">
+		<div class='col-md-8 pull-left' style="padding-top: 45px">
+			<h1 style='font-weight: 400'> Past Expeditions </h1> 
+		</div>
+	<span class='col-md-4 glyphicon glyphicon-road'></span>
 	<div class='row'>
-		<%= image_tag 'chucklebros.jpg', :class => 'img-responsive', :size => '1350x650' %> 
+		<div class='col-md-12'>
+			<table class="table table-hover">
+			<td>
+			  <h2> Perhentian Islands </h2>
+			  <h2> Redang Islands </h2>
+			  <h2> Langkawi </h2>
+			</td>
+
+			<td>
+				<%= image_tag('discover.jpg', class: 'gravatar') %>
+				<%= image_tag('Explore.jpg', class: 'gravatar') %>
+				<%= image_tag('drawing.jpg', class: 'gravatar') %>
+				<%= image_tag('gods.jpg', class: 'gravatar') %>
+			</td>
+			</table>
+		</div>
 	</div>
 </body>
 </html>

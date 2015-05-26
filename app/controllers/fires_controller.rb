@@ -14,7 +14,7 @@ class FiresController < ApplicationController
 
 	def create
 		@fire = Fire.new(fire_params)
-		@fire.diver = Diver.find(1)
+		@fire.diver = current_user
 
 		if @fire.save
 			flash[:success] = "Your Fire was created successfully"
@@ -41,7 +41,7 @@ class FiresController < ApplicationController
 
 	def like
 		@fire = Fire.find(params[:id])
-		like = Like.create(like: params[:like], diver: Diver.first, fire: @fire)
+		like = Like.create(like: params[:like], diver: current_user, fire: @fire)
 		if like.valid?
 			flash[:success] = "Liked!"
 			redirect_to :back

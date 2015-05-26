@@ -4,13 +4,6 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about'
 
-  # get '/fires' => 'fires#index'
-  # post '/fires' => 'fires#create'
-  # get 'fires/:id/edit', to: 'fires#edit', as: 'edit_fire'
-  # patch '/fires/:id', to: 'fires#update'
-  # get '/fires/:id', to: 'fires#show', as:'fire'
-  # delete '/fires/:id', to: 'fires#destroy'
-
   resources :divers , except: [:new]
 
   get '/register', to: 'divers#new'
@@ -20,5 +13,9 @@ Rails.application.routes.draw do
       post 'like'
     end
   end
+
+  get 'login', to: 'logins#new'
+  post 'login', to: 'logins#create'
+  get 'logout', to: 'logins#destroy'
 
 end

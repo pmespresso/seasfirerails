@@ -40,3 +40,9 @@ What we need to do:
 - Ability for divers to log in and out of the app
 - Restric actions like create recipe, edit recipe, and like feature to logged in Divers only. 
 - Restrict edit of recipes by only the diver who created the recipe
+
+****
+
+Security: 
+use email for login authenticity
+bcrypt

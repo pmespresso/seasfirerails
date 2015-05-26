@@ -17,6 +17,7 @@ class DiversController < ApplicationController
 		@diver = Diver.new(diver_params)
 		if @diver.save
 			flash[:success] = 'Your account has been created successfully'
+			session[:diver_id] = @diver.id
 			redirect_to fires_path
 		else 
 			render 'new'
