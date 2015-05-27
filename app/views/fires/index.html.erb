@@ -1,5 +1,16 @@
 <%= render 'shared/page_title', title: 'All Fires' %>
 
+<ul class="nav nav-tabs">
+	<li class='active'>
+		<%= link_to 'Fires', fires_path %>
+	</li>
+	<li>
+		<%= link_to 'Divers', divers_path %>
+	</li>
+</ul>
+
+
+
 <%= will_paginate @fires %>
 
 <% @fires.each do |fire| %>
