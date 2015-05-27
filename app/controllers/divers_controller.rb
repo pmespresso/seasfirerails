@@ -1,5 +1,7 @@
 class DiversController < ApplicationController
-	
+	before_action :set_diver, only: [:edit, :update, :show]
+	before_action :require_same_user, only: [:edit, :update]
+
 	def index
 		@divers = Diver.paginate(page: params[:page], per_page: 5)
 	end
@@ -9,7 +11,6 @@ class DiversController < ApplicationController
 	end
 
 	def show
-		@diver = Diver.find(params[:id])
 		@fires = @diver.fires.paginate(page: params[:page], per_page: 3)
 	end
 
@@ -25,14 +26,13 @@ class DiversController < ApplicationController
 	end
 
 	def edit
-		@diver = Diver.find(params[:id])
+		
 	end
 
 	def update
-		@diver = Diver.find(params[:id])
 		if @diver.update(diver_params)
 			flash[:success] = 'Your profile has been successfully updated'
-			redirect_to divers_path #TODO change to show diver page
+			redirect_to diver_path(diver) 
 		else
 			render 'new'
 		end
@@ -44,4 +44,17 @@ class DiversController < ApplicationController
 		def diver_params
 			params.require(:diver).permit(:divername, :email, :image, :password)
 		end
+
+		def set_diver
+			@diver = Diver.find(params[:id])
+		end
+
+		def require_same_user
+			if current_user != @diver
+				flash[:danger] = "You can only edit your own profile"
+				redirect_to root_path
+			end
+		end
+
+
 end
