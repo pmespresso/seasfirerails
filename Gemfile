@@ -17,6 +17,7 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bcrypt', '~> 3.1.10'
 gem "paperclip", "~> 4.2"
+gem 'fog', '~> 1.30.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
