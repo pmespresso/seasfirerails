@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522014831) do
+ActiveRecord::Schema.define(version: 20150528062152) do
 
   create_table "divers", force: :cascade do |t|
     t.string   "divername"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "fires", force: :cascade do |t|
@@ -38,19 +43,7 @@ ActiveRecord::Schema.define(version: 20150522014831) do
     t.datetime "updated_at"
   end
 
-  create_table "logs", force: :cascade do |t|
-    t.string   "title"
-    t.text     "place"
-    t.text     "date"
-    t.text     "entry"
-    t.integer  "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string   "username"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -61,8 +54,8 @@ ActiveRecord::Schema.define(version: 20150522014831) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
