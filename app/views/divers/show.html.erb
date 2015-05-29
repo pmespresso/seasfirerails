@@ -1,0 +1,72 @@
+<%= render 'shared/page_title', title: "Diver: " + @diver.divername %>
+
+<div class='row'>
+	<div class='pull-left' style='float: left'>
+		<%= image_tag @diver.image.url(:medium) %>
+
+	</div>
+	<div class='pull-right' style='float: right'>
+		<p> Biography: ibero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+		</p>
+		<hr/>
+	</div>
+</div>
+
+<div class='row'>
+	<div class='col-md-4 col-md-offset-4 pull-left'>
+			<%= will_paginate @fires %>
+	</div>
+</div>
+
+<% @diver.fires.each do |fire| %>
+	<div class="row">
+
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 well">
+
+			<div class="col-sm-3 col-md-2 col-xs-4">
+				<section class="diver_info center">
+					<%= image_tag(fire.diver.image.url(:medium), class: 'img-responsive') %>
+					<h5>Diver Name: <%= link_to(fire.diver.divername, diver_path(fire.diver)) %></h5>
+				</section>
+			</div>
+
+			<div class='col-xs-3 col-sm-3 col-md-3' style='float: right'>
+					<div class='like pull-left'>
+						<%= link_to like_fire_path(fire, like: true), method: :post do %>
+						<button type='button' class='btn btn-info btn-lg img-responsive'>
+							<i class='glyphicon glyphicon-thumbs-up img-responsive'></i>
+						</button>
+						<% end %> &nbsp;<%= fire.thumbs_up_total %>&nbsp;&nbsp; 
+					</div>
+
+					<div class='like pull-right'>
+						<%= link_to like_fire_path(fire, like: false), method: :post do %>
+						<button type='button' class='btn btn-danger btn-lg img-responsive'>
+							<i class='glyphicon glyphicon-thumbs-down img-responsive'></i>
+						</button>
+						<% end %> &nbsp; <%= fire.thumbs_down_total %>
+					</div>	
+
+					<p class='edition', style='float: right'>
+						<span class='quiet'><small>created <%= time_ago_in_words(fire.created_at) %> ago </small></span> 
+						<span class='quiet'><small> updated <%= time_ago_in_words(fire.updated_at) %> ago </small></span>
+				</p>
+			</div>
+				
+			<div class="col-xs-4 col-sm-4 col-md-5">
+
+				<h3> <%= link_to fire.name, fire_path(fire), class: "post-title center-block" %> </h3>
+				<h5 class="post-summary"> <%= fire.summary %> </h5>
+			</div>
+			 	
+			<div class='center-block'>
+				<%= image_tag(fire.picture.url, class: "img-responsive") if fire.picture? %>
+			</div>		
+
+		</div>
+	
+		
+	</div>
+<% end %>
+
+<%= will_paginate @fires %>

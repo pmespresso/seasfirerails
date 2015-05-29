@@ -1,0 +1,21 @@
+<div class='row col-sm-12 '>
+	<div class='well col-xs-12 col-md-8 col-md-offset-2 '>
+		<%= form_for @diver, :url => divers_path, :html => { :multipart => true } do |f| %>
+
+			<%= f.label :divername %> <br/>
+			<%= f.text_field :divername %> <br/><br/>
+
+			<%= f.label :email %> <br/>
+			<%= f.email_field :email %> <br/><br/>
+
+			<%= f.label :password %>
+			<%= f.password_field :password %> <br/><hr/>
+			
+			<%= f.label :profile_picture %>
+			<%= f.file_field :image %>
+ 	
+			<%= f.submit(@diver.new_record? ? 'Register' : 'Edit Profile', class: 'btn btn-danger') %> <br/>
+
+		<% end %>
+	</div>
+</div>

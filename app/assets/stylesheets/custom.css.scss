@@ -17,16 +17,26 @@ input {
 .fire-title {
 	font-size: 50px;
 	font-weight: 300;
-	letter-spacing: -1px;
+	letter-spacing: 1.12px;
 	line-height: 30.33px;
 	text-align: center;
+	color: #DC143C;
 }
 .post-title {
 	font-size: 30px;
 	font-weight: 300;
 	letter-spacing: -1px;
-	line-height: 29.1px;
+	line-height: 39.1px;
 	text-align: left;
+	vertical-align: left;
+	margin-left: 23px;
+}
+
+.post-summary {
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing: 1.4px;
+	line-height: 20px;
 }
 
 #new-fire-how-to {
@@ -36,11 +46,11 @@ input {
 }
 
 #explanation {
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 23.33px;
-	letter-spacing: -0.2px;
+	letter-spacing: 1px;
 	font-weight: 300;
-	margin-top: 23px;
+	padding: 0 0 15px 0;
 }
 
 .container-fluid img{
@@ -62,9 +72,32 @@ input {
 
 #founders {
 	padding-right: 10px;
-	padding-bottom: 10px;
 }
 
+.like {
+	position: relative;
+	top: 70px;
+	size: 50x50;
+}
+
+.edition {
+	position: relative;
+	display: block;
+	float: left;
+	margin-top: 70px;
+	margin-left: 40px;
+}
+
+.gravatar {
+	position: relative;
+	display: inline-block;
+	max-width: 300px;
+	max-height: 265px;
+	width: auto;
+	height: auto;
+	margin: 0 auto;
+
+}
 .name {
 	font-weight: 300;
 	letter-spacing: 1.2px;
@@ -81,4 +114,36 @@ span.picture {
 
 .show_recipe {
 	margin: 10px 10px 10px 10px;
+}
+
+#about-carousel {
+	display: block;
+	position: relative;
+	width: 1240px;
+	height: 480px;
+	overflow: hidden;
+	.carousel-caption {
+		display: inline-block;
+		position: fixed;
+		top: 380px;
+		z-index: 1;
+	}
+}
+
+#about-carousel img{
+	display: block;
+	height: auto;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 31px;
+}
+
+.carousel-control {
+	border: 1px solid #FFFFFF;
+}
+
+span.glyphicon-road {
+	font-size: 4.2em;
+	padding-left: 30px;
+	padding-top: 50px;
 }

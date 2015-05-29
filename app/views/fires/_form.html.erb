@@ -16,7 +16,7 @@
 				<%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
 			</span> <br/>
 			
-			<%= f.submit(@fire.new_record? ? 'Create Fire' : 'Edit Fire', class: 'btn btn-info') %> <br/>
+			<%= f.submit(@fire.new_record? ? 'Create Fire' : 'Edit Fire', class: 'btn btn-danger') %> <br/>
 
 		<% end %>
 	</div>

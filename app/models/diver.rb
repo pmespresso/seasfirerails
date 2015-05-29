@@ -7,5 +7,7 @@ class Diver < ActiveRecord::Base
 	validates :email, presence: true, length: {maximum: 110},
 									  uniqueness: { case_sensitive: false },
 									  format: {with: VALID_EMAIL_REGEX}
-	
+	has_secure_password
+	has_attached_file :image, :styles => { :medium => "300x400>", :thumb => "100x100>" }
+	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 end

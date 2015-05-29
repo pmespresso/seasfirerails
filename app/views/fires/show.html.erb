@@ -2,9 +2,9 @@
 
 <div class='row'>
 	<div class='col-md-4 pull-right center'>
-	 <%= gravatar_for @fire.diver, size: 200 %>
 	 <p>
-	 	<h5> Brought to you by: <%= @fire.diver.divername %></h5>
+	 	<h5> Brought to you by: <%= link_to(@fire.diver.divername, diver_path(@fire.diver)) %></h5>
+	 	<%= image_tag(@fire.diver.image.url(:medium)) %>
 	 </p>
 	</div>
 	
@@ -13,7 +13,6 @@
 		<h3><%= @fire.summary %> </h3>
 		<div class="show_fire">
 			<%= image_tag(@fire.picture.url, class: "gravatar") if @fire.picture %>
-			<%= link_to "Edit this Fire", edit_fire_path(@fire), class: 'btn btn-warning' %>
 		</div>
 		<div class='well'>
 		<p>
@@ -34,4 +33,10 @@
 </div>
 </div>
 
-<h5> <%= link_to "Return to Browsing Fires", fires_path, class: 'btn btn-warning' %></h5>
+<div class='col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2'>
+
+<h5> <%= link_to "Return to Browsing Fires", fires_path, class: 'btn btn-info pull-left' %> &nbsp; 
+
+<% if logged_in? and @fire.diver == current_user %> <%= link_to "Edit this Fire", edit_fire_path(@fire), class: 'btn btn-info pull-right' %> </h5> <% end %>
+
+</div>

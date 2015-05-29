@@ -1,11 +1,13 @@
 class FiresController < ApplicationController
+	before_action :set_fire, only: [:edit, :update, :show, :like]
+	before_action :require_user, except: [:show, :index]
+	before_action :require_same_user, only: [:edit, :update]
 
 	def index 
 		@fires = Fire.paginate(page: params[:page], per_page: 5)
 	end
 
 	def show
-		@fire = Fire.find(params[:id])
 	end
 
 	def new
@@ -14,7 +16,7 @@ class FiresController < ApplicationController
 
 	def create
 		@fire = Fire.new(fire_params)
-		@fire.diver = Diver.find(1)
+		@fire.diver = current_user
 
 		if @fire.save
 			flash[:success] = "Your Fire was created successfully"
@@ -26,11 +28,9 @@ class FiresController < ApplicationController
 	end
 
 	def edit
-		@fire = Fire.find(params[:id])
 	end
 
 	def update
-		@fire = Fire.find(params[:id])
 		if @fire.update(fire_params)
 			flash[:success] = "Successfully updated your Fire!"
 			redirect_to fire_path(@fire)
@@ -40,8 +40,8 @@ class FiresController < ApplicationController
 	end
 
 	def like
-		@fire = Fire.find(params[:id])
-		like = Like.create(like: params[:like], diver: Diver.first, fire: @fire)
+		
+		like = Like.create(like: params[:like], diver: current_user, fire: @fire)
 		if like.valid?
 			flash[:success] = "Liked!"
 			redirect_to :back
@@ -55,5 +55,16 @@ class FiresController < ApplicationController
 
 		def fire_params
 			params.require(:fire).permit(:name, :summary, :description, :picture)
+		end
+
+		def set_fire
+			@fire = Fire.find(params[:id])
+		end
+
+		def require_same_user
+			if current_user != @fire.diver
+				flash[:danger] = "You can only edit when logged in"
+				redirect_to root_path
+			end
 		end
 end

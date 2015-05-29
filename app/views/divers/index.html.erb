@@ -1,0 +1,33 @@
+<%= render 'shared/page_title', title: 'All Divers' %>
+
+<ul class="nav nav-tabs">
+	<li>
+		<%= link_to 'Fires', fires_path %>
+	</li>
+
+	<li class='active'>
+		<%= link_to 'Divers', divers_path %>
+	</li>
+	
+</ul>
+
+<div class='row'>
+	<div class='col-md-4 pull-left'>
+		<%= will_paginate %>
+	</div>
+</div>
+
+<% @divers.each do |diver| %>
+	<div class='row'>
+		<div class='col-md-10 col-md-offset-1 well center'>
+			<%= link_to(image_tag(diver.image.url(:medium)), diver_path(diver), class: 'pull-right') %>
+
+			<h2 class='diver-stats'> Diver Name: <%= diver.divername %> </h1>
+
+			<h2 class='diver-stats'> Dives Logged: <%= diver.fires.count %> </h2>
+
+			<h2 class='diver-stats'> Active Since: <%= time_ago_in_words(diver.created_at) %> </h2>
+		</div>
+	</div>
+
+<% end %>
