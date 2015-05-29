@@ -9,18 +9,18 @@ class DiversController < ActiveRecord::Base
 	end
 
 	def create
-		@diver = Diver.new(post_params)
+		@diver = Diver.new(diver_params)
 		@diver.save
 			redirect_to @diver
 	end
 
 	def show
-		@diver = Diver.find(post_params[:id])
+		@diver = Diver.find(diver_params[:id])
 	end
 
 	private
 
-	def post_params
+	def diver_params
 		params.require(:diver).permit(:divername, :email)
 	end
 end
