@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528062152) do
+ActiveRecord::Schema.define(version: 20150531032155) do
 
   create_table "divers", force: :cascade do |t|
     t.string   "divername"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20150528062152) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "fire_objectives", force: :cascade do |t|
+    t.integer "objective_id"
+    t.integer "fire_id"
+  end
+
+  create_table "fire_styles", force: :cascade do |t|
+    t.integer "style_id"
+    t.integer "fire_id"
   end
 
   create_table "fires", force: :cascade do |t|
@@ -41,6 +51,14 @@ ActiveRecord::Schema.define(version: 20150528062152) do
     t.integer  "fire_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "objectives", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
