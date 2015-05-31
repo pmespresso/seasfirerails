@@ -1,7 +1,8 @@
 class FiresController < ApplicationController
 	before_action :set_fire, only: [:edit, :update, :show, :like]
-	before_action :require_user, except: [:show, :index]
+	before_action :require_user, except: [:show, :index, :like]
 	before_action :require_same_user, only: [:edit, :update]
+	before_action :require_user_like, only: [:like]
 
 	def index 
 		@fires = Fire.paginate(page: params[:page], per_page: 5)
@@ -43,7 +44,7 @@ class FiresController < ApplicationController
 		
 		like = Like.create(like: params[:like], diver: current_user, fire: @fire)
 		if like.valid?
-			flash[:success] = "Liked!"
+			flash[:success] = "Voted! XD"
 			redirect_to :back
 		else
 			flash[:danger] = "You already voted on this Fire!"
@@ -54,7 +55,7 @@ class FiresController < ApplicationController
 	private
 
 		def fire_params
-			params.require(:fire).permit(:name, :summary, :description, :picture)
+			params.require(:fire).permit(:name, :summary, :description, :picture, style_ids: [], objective_ids: [])
 		end
 
 		def set_fire
@@ -65,6 +66,13 @@ class FiresController < ApplicationController
 			if current_user != @fire.diver
 				flash[:danger] = "You can only edit when logged in"
 				redirect_to root_path
+			end
+		end
+
+		def require_user_like
+			if !logged_in?
+				flash[:danger] = 'You need to log in to do that'
+				redirect_to :back
 			end
 		end
 end

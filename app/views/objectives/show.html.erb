@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: 'All Fires' %>
+<%= render 'shared/page_title', title: "Dives for: " + @objective.name %>
 
 <ul class="nav nav-tabs">
 	<li class='active'>
@@ -13,7 +13,7 @@
 
 <%= will_paginate @fires %>
 
-<% @fires.each do |fire| %>
+<% @objective.fires.each do |fire| %>
 	<div class="row">
 
 		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 well">

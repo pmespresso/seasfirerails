@@ -16,18 +16,22 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         
+        
         <li><%= link_to 'About', about_path, :class => 'nav-options' %></a></li>
         <li><%= link_to 'Browse Fires', fires_path, :class => 'nav-options' %></li>
         
         <li class="nav-options">
-          <a href="#" class="nav-options" data-toggle="dropdown" role="button" aria-expanded="false"> Options <span class="caret"></span></a>
+          <a href="#" class="nav-options" data-toggle="dropdown" role="button" aria-expanded="false"> Create A New... <span class="caret"></span></a>
+          
           <ul class="dropdown-menu" role="menu">
             
             <% if logged_in? %>
-              <li> Logged In As: <%= link_to(current_user.divername, diver_path(current_user))%> </li>
               <li><%= link_to('All Diver Profiles', divers_path) %> </li>
               <li><%= link_to('Add Fires', new_fire_path) %></li>
-              <li><a href="#">Add Album</a></li>
+
+              <li class='divider'></li>
+              <li><%= link_to(new_style_path) do %> New Style <% end %> </li>
+              <li><%= link_to('Add Objective', new_objective_path) %></li>
               <li class="divider"></li>
               <li><%= link_to('Log out', logout_path) %></a></li>
             <% else %>
@@ -36,6 +40,10 @@
             <% end %>
 
           </ul>
+
+          <% if logged_in? %>
+          <li> <%= link_to("Logged In As: " + current_user.divername, diver_path(current_user))%> </li>
+        <% end %>
         </li>
       </ul>
 </nav>
