@@ -43,9 +43,9 @@
 
 <h5> <%= link_to "Return to Browsing Fires", fires_path, class: 'btn btn-info pull-left' %> &nbsp; 
 
-<% if logged_in? and @fire.diver == current_user or current_user.admin? %> <%= link_to "Edit this Fire", edit_fire_path(@fire), class: 'btn btn-info pull-right' %> </h5> <% end %>
+<% if logged_in? and (@fire.diver == current_user || current_user.admin?) %> <%= link_to "Edit this Fire", edit_fire_path(@fire), class: 'btn btn-info pull-right' %> </h5> <% end %>
 
-<% if current_user.admin? %>
+<% if logged_in? and current_user.admin? %>
 	<%= link_to "Delete Fire", @fire, method: :delete, data: {confirm: "You Sure M8?" } %>
 <% end %>
 
