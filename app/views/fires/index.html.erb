@@ -52,8 +52,12 @@
 
 				<h3> <%= link_to fire.name, fire_path(fire), class: "post-title center-block" %> </h3>
 				<h5 class="post-summary"> <%= fire.summary %> </h5>
-				<p> Dive Style: <%= render fire.styles %> </p>
-				<p> Dive Objectives: <%= render fire.objectives %> </p>
+				<% if fire.styles.any? %>
+					<p> Dive Style: <%= render fire.styles %> </p>
+				<% end %>
+				<% if fire.objectives.any? %>
+					<p> Dive Objectives: <%= render fire.objectives %> </p>
+				<% end %>
 			</div>
 			 	
 			<div class='center-block'>
