@@ -3,6 +3,7 @@ class FiresController < ApplicationController
 	before_action :require_user, except: [:show, :index, :like]
 	before_action :require_same_user, only: [:edit, :update]
 	before_action :require_user_like, only: [:like]
+	before_action :admin_user, only: :destroy
 
 	def index 
 		@fires = Fire.paginate(page: params[:page], per_page: 5)
@@ -52,6 +53,12 @@ class FiresController < ApplicationController
 		end
 	end
 
+	def destroy
+		Fire.find(params[:id]).destroy
+		flash[:success] = "She's gone...it's done."
+		redirect_to fires_path
+	end
+
 	private
 
 		def fire_params
@@ -63,7 +70,7 @@ class FiresController < ApplicationController
 		end
 
 		def require_same_user
-			if current_user != @fire.diver
+			if current_user != @fire.diver and !current_user.admin?
 				flash[:danger] = "You can only edit when logged in"
 				redirect_to root_path
 			end
@@ -74,5 +81,9 @@ class FiresController < ApplicationController
 				flash[:danger] = 'You need to log in to do that'
 				redirect_to :back
 			end
+		end
+
+		def admin_user
+			redirect_to fires_path unless current_user.admin?
 		end
 end

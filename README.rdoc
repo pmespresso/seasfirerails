@@ -46,3 +46,8 @@ What we need to do:
 Security: 
 use email for login authenticity
 bcrypt
+
+*****
+
+- Add admin user functionality
+	* 

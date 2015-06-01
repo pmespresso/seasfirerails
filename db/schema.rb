@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150531032155) do
+ActiveRecord::Schema.define(version: 20150601055242) do
 
   create_table "divers", force: :cascade do |t|
     t.string   "divername"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150531032155) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "admin",              default: false
   end
 
   create_table "fire_objectives", force: :cascade do |t|

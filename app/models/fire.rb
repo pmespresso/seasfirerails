@@ -1,9 +1,9 @@
 class Fire < ActiveRecord::Base
 	belongs_to :diver
-	has_many :likes
-	has_many :fire_styles	
+	has_many :likes, dependent: :destroy
+	has_many :fire_styles, dependent: :destroy	
 	has_many :styles, through: :fire_styles
-	has_many :fire_objectives
+	has_many :fire_objectives, dependent: :destroy
 	has_many :objectives, through: :fire_objectives
 
 	validates :name, presence: true, length: {minimum: 5, maximum: 100}

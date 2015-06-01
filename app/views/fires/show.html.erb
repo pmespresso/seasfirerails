@@ -19,7 +19,7 @@
 		<% if @fire.styles.any? %>
 			<p> Dive Style: <%= render @fire.styles %> </p>
 		<% end %>
-		<% if fire.objectives.any? %>
+		<% if @fire.objectives.any? %>
 			<p> Dive Objectives: <%= render @fire.objectives %> </p>
 		<% end %>
 			<strong> So this is what happened: </strong>
@@ -43,6 +43,10 @@
 
 <h5> <%= link_to "Return to Browsing Fires", fires_path, class: 'btn btn-info pull-left' %> &nbsp; 
 
-<% if logged_in? and @fire.diver == current_user %> <%= link_to "Edit this Fire", edit_fire_path(@fire), class: 'btn btn-info pull-right' %> </h5> <% end %>
+<% if logged_in? and @fire.diver == current_user or current_user.admin? %> <%= link_to "Edit this Fire", edit_fire_path(@fire), class: 'btn btn-info pull-right' %> </h5> <% end %>
+
+<% if current_user.admin? %>
+	<%= link_to "Delete Fire", @fire, method: :delete, data: {confirm: "You Sure M8?" } %>
+<% end %>
 
 </div>

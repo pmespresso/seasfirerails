@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about'
 
-  resources :divers , except: [:new]
+  resources :divers , except: [:new, :destroy]
 
   get '/register', to: 'divers#new'
 
